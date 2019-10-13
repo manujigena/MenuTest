@@ -1,0 +1,6 @@
+C:\Users\Manula\source\repos\MenuTest\MenuTest\bin\Debug\MenuTest.exe.config
+C:\Users\Manula\source\repos\MenuTest\MenuTest\bin\Debug\MenuTest.exe
+C:\Users\Manula\source\repos\MenuTest\MenuTest\bin\Debug\MenuTest.pdb
+C:\Users\Manula\source\repos\MenuTest\MenuTest\obj\Debug\MenuTest.csprojAssemblyReference.cache
+C:\Users\Manula\source\repos\MenuTest\MenuTest\obj\Debug\MenuTest.exe
+C:\Users\Manula\source\repos\MenuTest\MenuTest\obj\Debug\MenuTest.pdb
