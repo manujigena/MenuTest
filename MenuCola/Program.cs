@@ -12,12 +12,7 @@ namespace MenuCola
         static void Main(string[] args)
         {
             string opcion;
-            string plato;
-            int pedido;
-            int posicion;
-            int indice;
-            Queue<String> cola;
-            //List<string> lista = new List<string>();
+            int pedido;            
             Administrador admin = new Administrador();
             
             do
@@ -37,50 +32,58 @@ namespace MenuCola
                 {
                     case "1":
                         Console.Clear();
-                        cola = admin.MiQueue;
-                        Console.WriteLine("Se creo la cola con exito");                        
+                        admin.MiQueue = new Queue<string>();
+                        Console.WriteLine("Se creo la cola con exito");
+                        Console.ReadLine();
                         break;
                     case "2":
+                        //El colector de basura mata cualquier variable en null, la elimina de memoria
                         Console.Clear();
                         if (admin.MiQueue != null) {
-                            admin.MiQueue.Clear();
+                            admin.MiQueue = null;
                         }                        
                         Console.WriteLine("Se borro con exito la cola");
+                        Console.ReadLine();
                         break;
                     case "3":
-                        try
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Ingrese el numero del pedido");
-                            pedido = int.Parse(Console.ReadLine());
-                            if (cola != null) {
-                                posicion = cola.Count;
-                                cola.Enqueue(posicion + "-" + pedido);
-                            }                            
-                            break;
-                        }
-                        catch (NullReferenceException e)
-                        {
-                            throw e;
-                        }                        
+                        Console.WriteLine("Ingrese numero del pedido");
+                        pedido = int.Parse(Console.ReadLine());
+                        admin.AgregarElemento(pedido);
+                        Console.WriteLine("Se agrego con exito " + admin.miPedido);
+                        Console.ReadLine();
+                        break;
                     case "4":
                         Console.Clear();
-                        Console.WriteLine("Se borrara el primer pedido");
-                        cola.Dequeue();
+                        Console.WriteLine("Se borra primer pedido");
+                        Console.WriteLine(admin.EliminarElemento());
+                        Console.ReadLine();
                         break;
                     case "5":
                         Console.Clear();
-                        foreach (var item in cola)
-                        {
-                            Console.WriteLine(item.ToString());
-                        }                        
+                        Console.WriteLine("Lista Completa");
+                        admin.MostrarQueueFull();
+                        Console.ReadLine();
                         break;
                     case "6":
+                        Console.Clear();
+                        Console.WriteLine(admin.MostrarUltimoElemento());
+                        Console.ReadLine();
+                        break;
+                    case "7":
+                        Console.Clear();
+                        Console.WriteLine(admin.MostrarPrimerElemento());
+                        Console.ReadLine();
+                        break;
+                    case "8":
+                        Console.Clear();
+                        Console.WriteLine(admin.CantidadDeElementos());
+                        Console.ReadLine();
+                        break;                    
                     default:
                         break;
                 }
 
-            } while (opcion != "5");
+            } while (opcion != "9");
         }
     }    
 

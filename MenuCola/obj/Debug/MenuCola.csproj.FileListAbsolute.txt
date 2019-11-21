@@ -1,0 +1,6 @@
+C:\Users\Manula\source\repos\MenuTest\MenuCola\obj\Debug\MenuCola.csprojAssemblyReference.cache
+C:\Users\Manula\source\repos\MenuTest\MenuCola\bin\Debug\MenuCola.exe.config
+C:\Users\Manula\source\repos\MenuTest\MenuCola\bin\Debug\MenuCola.exe
+C:\Users\Manula\source\repos\MenuTest\MenuCola\bin\Debug\MenuCola.pdb
+C:\Users\Manula\source\repos\MenuTest\MenuCola\obj\Debug\MenuCola.exe
+C:\Users\Manula\source\repos\MenuTest\MenuCola\obj\Debug\MenuCola.pdb

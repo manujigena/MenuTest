@@ -8,25 +8,50 @@ namespace MenuCola
 {
     class Administrador
     {
-        protected int pedido;
-        protected int posicion;
-        protected Queue<String> cola;
+        private String pedido;
+        public String miPedido
+        {
+            get { return this.pedido; }            
+        }
+        private int posicion;
+        private Queue<String> cola;
 
         public Queue<String> MiQueue
         {
             get { return this.cola; }
-            set { this.cola = new Queue<string>(); }
+            set { this.cola = value; }
         }
 
         public void AgregarElemento(int pedido)
-        {
-            this.posicion = this.cola.Count;
-            this.cola.Enqueue(posicion + "" + pedido);
+        {            
+            this.posicion = this.cola.Count + 1;
+            this.pedido = posicion + " - " + pedido;
+            this.cola.Enqueue(this.pedido);
         }
 
-        public void EliminarElemento()
+        public String EliminarElemento()
         {
-            this.cola.Dequeue();
+            return this.cola.Dequeue();
+        }
+
+        public void MostrarQueueFull() {
+            foreach (var item in this.cola)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public String MostrarUltimoElemento()
+        {
+            return this.pedido;
+        }
+
+        public String MostrarPrimerElemento() {
+            return this.cola.Peek();
+        }
+
+        public int CantidadDeElementos() {
+            return this.cola.Count();
         }
 
     }
